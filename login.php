@@ -73,13 +73,13 @@ if(isset($_POST['submit'])){
             <form action="" method="post">
                 <div>
                     <label>Email:</label>
-                    <input type="text"  name="user_email" value="<?php echo htmlentities($user_email)?>">
+                    <input type="text"  name="user_email" required value="<?php echo htmlentities($user_email)?>">
 
                 </div>
                 <hr>
                 <div>
                         <label>Password:</label>
-                    <input type="password"  name="user_password" value="<?php echo htmlentities($user_password)?>">
+                    <input type="password"  name="user_password" required value="<?php echo htmlentities($user_password)?>">
                 </div>
                 <hr>
              
