@@ -1,6 +1,6 @@
 <aside>
 
-    <a href="">
+    <a href="../create_mail.php">
         <div class="button">
             <img src="assets/svg/plus.svg" alt="">
             <p>compose</p>
@@ -12,8 +12,8 @@
         <table>
 
             <tr class="inbox">
-                <td> <a href="#"><i class="material-icons icon">inbox</i></a></td>
-                <td class="tb-padding"> <a href="#">Inbox</a></td>
+                <td> <a href="../index.php"><i class="material-icons icon">inbox</i></a></td>
+                <td class="tb-padding"> <a href="../index.php">Inbox</a></td>
                 <td> <a href="#">224</a></td>
             </tr>
 
@@ -32,8 +32,8 @@
             </tr>
 
             <tr>
-                <td><a href="#"><i class="material-icons">send</i></a></td>
-                <td class="tb-padding"><a href="">Sent</a></td>
+                <td><a href="./sent_mail.php"><i class="material-icons">send</i></a></td>
+                <td class="tb-padding"><a href="./sent_mail.php">Sent</a></td>
                 <td> <a href="#"></a></td>
             </tr>
 

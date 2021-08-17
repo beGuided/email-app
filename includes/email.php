@@ -2,11 +2,11 @@
 
 class Email extends Db_object {
     protected static $db_table = "emails";
-    protected static $db_table_field = array( 'title','sender','subject','time()','content','receiver_email_id','status');
+    protected static $db_table_field = array( 'sender_name','sender_id','subject','time()','content','receiver_email_id','status');
 
     public $id;
-    public $title;
-    public $sender;
+    public $sender_name;
+    public $sender_id;
     public $subject;
     public $time;
     public $content;
@@ -28,10 +28,11 @@ class Email extends Db_object {
 //    }
     public static function find_mail_by_user_mail($user_email=""){
         global $database;
-        $user_email = $database->escape_string($user_email);
+        $user_email = $database->escape_string((string)$user_email);
         $sql = "SELECT * FROM " . self::$db_table;
         $sql .= " WHERE receiver_email_id = '$user_email' ";
-        //$sql .=" ORDER BY photo_id ASC";
+        $sql .=" ORDER BY id DESC";
+        $sql .=" LIMIT 15";
 
         return self::find_query($sql);
 

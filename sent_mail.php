@@ -1,38 +1,58 @@
 
-<?php  include_once('init.php');
+<?php
+include_once('init.php');
 
 if(!$session->is_signed_in()){ redirect("login.php");}
 
-if(empty($_GET['id'])) {
-    redirect("index.php");
-}else{
-    $mail_id= $_GET['id'];
-}
-// select all where from  email sender= user_email
-$email = Email::find_by_id($mail_id)
+$user = User::find_by_id($_SESSION['user_id']);
+$user_email = $user->user_email;
+
+$emails = Email::find_mail_by_user_mail($user_email);
+
+
 ?>
 
-
 <?php include_once('includes/header.php');?>
-<!-- sidebar  -->
-<div class="container">
-    <div class="main-wrapper">
+    <!-- sidebar  -->
+    <div class="container">
+        <div class="main-wrapper">
 
         <?php include_once('includes/sidebar.php');?>
 
-        <?php
-        echo "$email->subject";
-        ?>
+
+                <!-- 2nd row -->
+                <div class="row">
+                    <div class="nav">
+                        <ul>
+                            <li class="header1"> <i class="fa fa-angle-up"></i> unread</li>
+                            <li class="push"> <a href="#"></a> 2018-03-13</li>
+                            <li class="more"> <a href="#"> <i class="f	fa fa-ellipsis-v"></i></a></li>
+                        </ul>
+                    </div>
+                    <hr>
+
+                    <table>
+                        <?php foreach ($emails as $mail):?>
+                        <tr>
+                            <td><a href=""> <input type="checkbox"></a></td>
+                            <td> <a href="view_mail.php?id=<?php echo $mail->id ?>"><i class="material-icons">star_outline</i></a></td>
+                            <td><a href="view_mail.php?id=<?php echo $mail->id ?>"> <span><?php echo $mail->sender_name?></span></a></td>
+                            <td class="tb-padding"><a href="view_mail.php?id=<?php echo $mail->id ?>"> <?php echo $mail->subject?> <span class="msg"><?php echo $mail->content?></span></a></td>
+                            <td><a href="view_mail.php?id=<?php echo $mail->id ?>"><?php echo $mail->time?></a></td>
+
+
+                        </tr>
+                        <?php endforeach;?>
+
+                    </table>
+                </div>
+
+
+            </main>
+
+        </div>
 
     </div>
-
-    </main>
-
-
-
-</div>
-
-</div>
 
 </body>
 

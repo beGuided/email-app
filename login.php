@@ -1,9 +1,9 @@
+
 <?php
 require_once('init.php');
 
-if($session->is_signed_in()){
-    redirect("login.php");
-}
+
+// if($session->is_signed_in()){  redirect("login.php");}
 
 
 if(isset($_POST['submit'])){
@@ -18,7 +18,7 @@ if(isset($_POST['submit'])){
         $session->login($user_found);
         redirect("index.php");
     }else{
-     $the_message = "your password or user_email are incorrect";
+     $the_message = " password or email are incorrect please try again";
     }
 
 }else{
@@ -29,12 +29,13 @@ if(isset($_POST['submit'])){
 
 ?>
 
+<link rel="stylesheet" href="css/stylesheet.css">
         <!-- End Navbar -->
-        <div class="container m-5">
+        <!-- <div class="container m-5">
 
             <div class="col-md-8 col-md-offset-3 ">
 
-                <h4 class="bg-danger"><?php echo $the_message; ?></h4>
+                <h4 class="bg-danger"></h4>
 
 <form id="login-id" action="" method="post">
 
@@ -59,5 +60,31 @@ if(isset($_POST['submit'])){
 </div>
 
 
-</div>
+</div> -->
 
+
+
+<div class="login-container">
+<h4 class="error-message"><?php echo $the_message; ?></h4>
+    <h3>Sign-in Your Account </h3>
+            <div class="login-header">
+
+            </div>
+            <form action="" method="post">
+                <div>
+                    <label>Email:</label>
+                    <input type="text"  name="user_email" value="<?php echo htmlentities($user_email)?>">
+
+                </div>
+                <hr>
+                <div>
+                        <label>Password:</label>
+                    <input type="password"  name="user_password" value="<?php echo htmlentities($user_password)?>">
+                </div>
+                <hr>
+             
+<input type="submit"  value="Sign in" name="submit"> 
+<a href="sign-up.php" style="text-decoration: none; color:red;">  <span >sign up</span></a>
+            </form>
+
+        </div>

@@ -14,6 +14,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/stylesheet.css">
 </head>
 
 <body>
@@ -21,7 +22,7 @@
     <div class="top-nav">
         <div class="menu">
             <a href="#"><i class="material-icons">menu</i></a>
-            <a href="#"> <img src="assets/images/gmail.png" class="logo" alt="gmail logo">
+            <a href="index.php"> <img src="assets/images/gmail.png" class="logo" alt="gmail logo">
         </div>
 
         <!-- search form -->
@@ -37,7 +38,8 @@
                 <a href="#"><i class="material-icons push"> circle_notifications</i></a>
                 <a href="#"> <i class="material-icons push"> apps</i></a>
             </div>
-            <a href="logout.php"><button>logout</button></a>
+            <a href="sign-up.php"><button>Sign-up</button></a>
+            <a href="logout.php"><button>Sign-out</button></a>
 
         </div>
 

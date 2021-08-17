@@ -20,9 +20,21 @@ $email = Email::find_by_id($mail_id)
 
         <?php include_once('includes/sidebar.php');?>
 
-    <?php
-        echo "$email->subject";
-        ?>
+    <p class="large-font">  <?php echo "$email->subject"; ?></p>
+            <div class="contain">
+                  <span class="bold"><?php echo "$email->sender_name"?></span>
+                    <span class="to-right "><?php echo "$email->time"; ?></span>
+                    <span>icon</span>
+                    <span>icon</span>
+                    <span>icon</span>
+                </div>
+                    <p>to me</p>
+            <p><?php echo "$email->content"; ?></p>
+
+                </div>
+            </div>
+
+
 
         </div>
 

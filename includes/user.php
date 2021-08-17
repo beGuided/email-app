@@ -25,6 +25,21 @@ class User extends Db_object {
         $query_result =self::find_query($sql);
         return !empty($query_result)? array_shift($query_result) : false;
 
+    }
+
+    //verify if email already exist
+
+    public static function verify_if_email_exist($user_email){
+        global $database;
+        $user_email = $database->escape_string($user_email);
+
+        $sql= "SELECT * FROM " .self::$db_table ." WHERE ";
+        $sql.= "user_email = '{$user_email}' ";
+        $sql.="LIMIT 1";
+
+        $query_result =self::find_query($sql);
+        return !empty($query_result)? array_shift($query_result) : false;
+
 
     }
 
