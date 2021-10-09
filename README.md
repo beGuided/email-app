@@ -3,9 +3,9 @@
 
 # How to run locally
 - clone the repository
-- install xamp 
-- move the cloned repo to the htdoct directory in xmpp
-- copy the sql file from the folder titled "sql file"
+- install xampp 
+- move the cloned repo to the htdoc directory in xampp
+- copy the database sql file from the folder titled "sql file"
 - import the sql file in that folder into xampp
-- open the the project in a text editor of your choice and check/set the databse configuration
+- open the the project in a text editor of your choice and check/set the databse configuration in includes/db_config file
 - open in your browser
